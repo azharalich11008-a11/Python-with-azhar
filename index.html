@@ -201,6 +201,85 @@
             border-bottom: 1px solid #374151;
         }
 
+        /* NOTES */
+        .notes {
+            background: #f8fafc;
+        }
+
+        .notes-container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .note-card {
+            background: white;
+            margin-bottom: 18px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+
+        .note-card summary {
+            cursor: pointer;
+            padding: 20px 24px;
+            font-size: 19px;
+            font-weight: bold;
+            color: #111827;
+            list-style: none;
+        }
+
+        .note-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .note-card summary::after {
+            content: "＋";
+            float: right;
+            color: #2563eb;
+        }
+
+        .note-card[open] summary::after {
+            content: "−";
+        }
+
+        .note-content {
+            padding: 0 24px 24px;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        .note-content h4 {
+            color: #111827;
+            margin: 18px 0 8px;
+        }
+
+        .code {
+            background: #111827;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+        }
+
+        .note-content ul,
+        .note-content ol {
+            padding-left: 25px;
+        }
+
+        .note-content li {
+            margin: 6px 0;
+        }
+
+        .mcq {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
         /* REGISTRATION */
         .register {
             background: #eef2ff;
@@ -272,312 +351,9 @@
 
         /* MOBILE */
         @media (max-width: 800px) {
+
             nav {
                 padding: 15px 5%;
             }
 
-            nav ul {
-                gap: 12px;
-            }
-
-            nav ul li a {
-                font-size: 13px;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-        }
-
-        @media (max-width: 500px) {
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .form-box {
-                padding: 22px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">Python <span>With Azhar</span></div>
-
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#learn">Learn</a></li>
-            <li><a href="#course">Course</a></li>
-            <li><a href="#register">Register</a></li>
-        </ul>
-    </nav>
-
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-
-            <div class="python-icon">🐍</div>
-
-            <h1>Python <span>With Azhar</span></h1>
-
-            <p>
-                Welcome to Python With Azhar — a simple place to start
-                learning Python from the basics and build your programming
-                skills step by step.
-            </p>
-
-            <a href="#register" class="btn">Join the Course 🚀</a>
-
-        </div>
-    </section>
-
-
-    <!-- LEARN SECTION -->
-    <section id="learn">
-
-        <h2 class="section-title">What Will You Learn?</h2>
-
-        <p class="section-text">
-            This course is designed for beginners. You don't need advanced
-            programming knowledge. We will start from the basics and move
-            forward step by step.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">💻</div>
-                <h3>Python Basics</h3>
-                <p>
-                    Learn variables, data types, input, output and basic
-                    Python programming concepts.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🔀</div>
-                <h3>Conditions</h3>
-                <p>
-                    Understand if, elif and else statements and learn how
-                    Python makes decisions.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🔁</div>
-                <h3>Loops</h3>
-                <p>
-                    Learn for loops and while loops and understand how
-                    repetitive tasks can be automated.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">📦</div>
-                <h3>Functions</h3>
-                <p>
-                    Create reusable functions and organize your Python
-                    programs properly.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">📝</div>
-                <h3>Projects</h3>
-                <p>
-                    Practice your skills by creating beginner-friendly
-                    Python projects.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🚀</div>
-                <h3>Next Level</h3>
-                <p>
-                    Build a strong foundation that can help you continue
-                    learning programming.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- COURSE SECTION -->
-    <section id="course">
-
-        <h2 class="section-title">Python Beginner Course</h2>
-
-        <p class="section-text">
-            Start from zero and learn Python step by step.
-        </p>
-
-        <div class="course-box">
-
-            <h3>Course Roadmap 🐍</h3>
-
-            <ul class="course-list">
-                <li>✅ Day 01 — Introduction to Python</li>
-                <li>✅ Day 02 — Variables & Data Types</li>
-                <li>✅ Day 03 — Input & Output</li>
-                <li>✅ Day 04 — Operators</li>
-                <li>✅ Day 05 — if / elif / else</li>
-                <li>✅ Day 06 — For Loop</li>
-                <li>✅ Day 07 — While Loop</li>
-                <li>✅ Day 08 — Lists & Tuples</li>
-                <li>✅ Day 09 — Dictionaries & Sets</li>
-                <li>✅ Day 10 — Functions</li>
-                <li>✅ Day 11 — Mini Projects</li>
-                <li>✅ Day 12 — Final Beginner Project</li>
-            </ul>
-
-        </div>
-
-    </section>
-
-
-    <!-- REGISTRATION -->
-    <section class="register" id="register">
-
-        <h2 class="section-title">Student Registration 📝</h2>
-
-        <p class="section-text">
-            Fill out the form below to register yourself for Python With Azhar.
-        </p>
-
-        <div class="form-box">
-
-            <form id="registrationForm">
-
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Class / Education</label>
-
-                    <select id="class" required>
-                        <option value="">Select your class</option>
-                        <option>Class 9</option>
-                        <option>Class 10</option>
-                        <option>Class 11</option>
-                        <option>Class 12</option>
-                        <option>College / University</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Your Python Level</label>
-
-                    <select id="level" required>
-                        <option value="">Select your level</option>
-                        <option>Complete Beginner</option>
-                        <option>Basic Knowledge</option>
-                        <option>Intermediate</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Choose Course</label>
-
-                    <select id="courseSelect" required>
-                        <option value="">Select course</option>
-                        <option>Python Beginner Course</option>
-                        <option>Python Practice Course</option>
-                        <option>Python Mini Projects</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Why do you want to learn Python?</label>
-
-                    <textarea
-                        id="reason"
-                        placeholder="Write your reason..."
-                        required></textarea>
-                </div>
-
-                <button type="submit" class="btn">
-                    Submit Registration 🚀
-                </button>
-
-                <div class="success-message" id="successMessage">
-                    🎉 Registration submitted successfully!
-                    <br>
-                    Welcome to Python With Azhar.
-                </div>
-
-            </form>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 <span>Python With Azhar</span> — Learn. Practice. Build.
-        </p>
-
-        <p style="margin-top:10px; color:#9ca3af;">
-            Made for Python learners 🐍
-        </p>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-    <script>
-
-        document.getElementById("registrationForm").addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-            let name = document.getElementById("name").value;
-
-            document.getElementById("successMessage").style.display = "block";
-
-            document.getElementById("successMessage").innerHTML =
-                "🎉 Registration submitted successfully!" +
-                "<br>Welcome, " + name + "!" +
-                "<br>Welcome to Python With Azhar 🐍";
-
-            this.reset();
-
-        });
-
-    </script>
-
-</body>
-</html>
+            nav
