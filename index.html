@@ -11,45 +11,46 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
+            font-family: Arial, sans-serif;
             background: #f5f7fb;
-            color: #1f2937;
+            color: #222;
+            line-height: 1.6;
         }
 
         /* NAVBAR */
         nav {
-            width: 100%;
             background: #111827;
-            padding: 18px 8%;
+            color: white;
+            padding: 15px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
         }
 
         .logo {
-            color: white;
-            font-size: 24px;
+            font-size: 23px;
             font-weight: bold;
+            color: #38bdf8;
         }
 
-        .logo span {
-            color: #facc15;
+        .creator {
+            font-size: 13px;
+            color: #d1d5db;
+            margin-left: 8px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav ul li a {
@@ -60,300 +61,584 @@
         }
 
         nav ul li a:hover {
-            color: #facc15;
+            color: #38bdf8;
         }
 
         /* HERO */
         .hero {
-            min-height: 90vh;
+            min-height: 85vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #111827, #1e3a8a);
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
             color: white;
         }
 
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .python-icon {
-            font-size: 70px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
+        .hero-content h1 {
             font-size: 55px;
             margin-bottom: 15px;
         }
 
-        .hero h1 span {
-            color: #facc15;
+        .hero-content h1 span {
+            color: #38bdf8;
         }
 
-        .hero p {
-            font-size: 19px;
-            line-height: 1.7;
-            color: #e5e7eb;
-            margin-bottom: 30px;
+        .hero-content p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: auto;
+            color: #dbeafe;
         }
 
-        .btn {
+        .hero-btn {
             display: inline-block;
-            padding: 14px 28px;
-            background: #facc15;
-            color: #111827;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: #38bdf8;
+            color: #082f49;
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
             transition: 0.3s;
-            border: none;
-            cursor: pointer;
         }
 
-        .btn:hover {
+        .hero-btn:hover {
             transform: translateY(-3px);
-            background: #fde047;
+            background: white;
         }
 
-        /* SECTIONS */
+        /* GENERAL SECTION */
         section {
-            padding: 75px 8%;
+            padding: 70px 7%;
         }
 
         .section-title {
             text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
             font-size: 35px;
-            margin-bottom: 15px;
             color: #111827;
         }
 
-        .section-text {
-            text-align: center;
-            max-width: 700px;
-            margin: auto;
+        .section-title p {
             color: #6b7280;
-            line-height: 1.7;
-            margin-bottom: 45px;
+            margin-top: 8px;
         }
 
-        /* CARDS */
+        /* LEARN CARDS */
         .cards {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
         }
 
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            padding: 28px;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-        }
-
-        .card .icon {
-            font-size: 45px;
-            margin-bottom: 15px;
+            transform: translateY(-6px);
         }
 
         .card h3 {
-            margin-bottom: 12px;
-            color: #111827;
+            margin-bottom: 10px;
+            color: #1e3a8a;
         }
 
         .card p {
             color: #6b7280;
-            line-height: 1.6;
         }
 
         /* COURSE */
         .course-box {
-            max-width: 900px;
+            max-width: 850px;
             margin: auto;
-            background: #111827;
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
+            display: grid;
+            gap: 15px;
         }
 
-        .course-box h3 {
-            color: #facc15;
-            font-size: 25px;
-            margin-bottom: 20px;
+        .day {
+            background: white;
+            padding: 20px;
+            border-left: 5px solid #38bdf8;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
 
-        .course-list {
-            list-style: none;
-        }
-
-        .course-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #374151;
+        .day strong {
+            color: #1e3a8a;
         }
 
         /* NOTES */
-        .notes {
-            background: #f8fafc;
-        }
-
         .notes-container {
-            max-width: 1050px;
-            margin: auto;
-        }
-
-        .note-card {
-            background: white;
-            margin-bottom: 18px;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-            overflow: hidden;
-        }
-
-        .note-card summary {
-            cursor: pointer;
-            padding: 20px 24px;
-            font-size: 19px;
-            font-weight: bold;
-            color: #111827;
-            list-style: none;
-        }
-
-        .note-card summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .note-card summary::after {
-            content: "＋";
-            float: right;
-            color: #2563eb;
-        }
-
-        .note-card[open] summary::after {
-            content: "−";
-        }
-
-        .note-content {
-            padding: 0 24px 24px;
-            color: #4b5563;
-            line-height: 1.7;
-        }
-
-        .note-content h4 {
-            color: #111827;
-            margin: 18px 0 8px;
-        }
-
-        .code {
-            background: #111827;
-            color: #f9fafb;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 10px 0;
-            overflow-x: auto;
-            font-family: Consolas, monospace;
-            white-space: pre-wrap;
-        }
-
-        .note-content ul,
-        .note-content ol {
-            padding-left: 25px;
-        }
-
-        .note-content li {
-            margin: 6px 0;
-        }
-
-        .mcq {
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 10px 0;
-        }
-
-        /* REGISTRATION */
-        .register {
-            background: #eef2ff;
-        }
-
-        .form-box {
             max-width: 700px;
             margin: auto;
+        }
+
+        .notes-box {
             background: white;
             padding: 35px;
             border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .notes-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .notes-box h3 {
+            font-size: 25px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .notes-box p {
+            color: #6b7280;
+            margin-bottom: 22px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #1e3a8a;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #38bdf8;
+            color: #082f49;
+            transform: translateY(-3px);
+        }
+
+        /* REGISTER */
+        .register-box {
+            max-width: 550px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .register-box input,
+        .register-box select {
             width: 100%;
             padding: 13px;
+            margin-bottom: 15px;
             border: 1px solid #d1d5db;
-            border-radius: 10px;
+            border-radius: 8px;
             outline: none;
-            font-size: 15px;
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #2563eb;
+        .register-box input:focus,
+        .register-box select:focus {
+            border-color: #38bdf8;
         }
 
-        textarea {
-            resize: vertical;
-            min-height: 100px;
+        .register-box button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #1e3a8a;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .success-message {
-            display: none;
-            margin-top: 20px;
-            padding: 15px;
-            background: #dcfce7;
-            color: #166534;
-            border-radius: 10px;
+        .register-box button:hover {
+            background: #38bdf8;
+            color: #082f49;
+        }
+
+        #message {
             text-align: center;
+            margin-top: 15px;
+            color: green;
             font-weight: bold;
         }
 
         /* FOOTER */
         footer {
             background: #111827;
-            color: white;
+            color: #d1d5db;
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px;
         }
 
-        footer span {
-            color: #facc15;
+        footer strong {
+            color: #38bdf8;
         }
 
         /* MOBILE */
-        @media (max-width: 800px) {
+        @media (max-width: 700px) {
 
             nav {
-                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
             }
 
-            nav
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div>
+            <div class="logo">
+                Python With Azhar
+            </div>
+
+            <div class="creator">
+                By Azhar Channa
+            </div>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#course">Course</a></li>
+            <li><a href="#notes">Basic Python Notes</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to <span>Python With Azhar</span> 🐍
+            </h1>
+
+            <p>
+                Learn Python from Basic to Advanced level with simple,
+                practical and easy-to-understand lessons.
+            </p>
+
+            <a href="#course" class="hero-btn">
+                Start Learning 🚀
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEARN -->
+    <section id="learn">
+
+        <div class="section-title">
+
+            <h2>What You Will Learn 📚</h2>
+
+            <p>
+                Build your Python skills step by step.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🐍 Python Basics</h3>
+                <p>
+                    Learn variables, print, input and basic Python concepts.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🧮 Mathematics</h3>
+                <p>
+                    Learn calculations, percentage, average and operators.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔀 Conditions</h3>
+                <p>
+                    Understand if, elif and else statements.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔁 Loops</h3>
+                <p>
+                    Learn for loops, range and even/odd numbers.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COURSE -->
+    <section id="course">
+
+        <div class="section-title">
+
+            <h2>Python Course Roadmap 🚀</h2>
+
+            <p>
+                Follow the course step by step.
+            </p>
+
+        </div>
+
+
+        <div class="course-box">
+
+            <div class="day">
+                <strong>Day 01:</strong> Introduction to Python
+            </div>
+
+            <div class="day">
+                <strong>Day 02:</strong> Variables & Data Types
+            </div>
+
+            <div class="day">
+                <strong>Day 03:</strong> Input & Output
+            </div>
+
+            <div class="day">
+                <strong>Day 04:</strong> Basic Math Operators
+            </div>
+
+            <div class="day">
+                <strong>Day 05:</strong> Percentage & Average
+            </div>
+
+            <div class="day">
+                <strong>Day 06:</strong> If / Elif / Else
+            </div>
+
+            <div class="day">
+                <strong>Day 07:</strong> Complete Marksheet
+            </div>
+
+            <div class="day">
+                <strong>Day 08:</strong> For Loop
+            </div>
+
+            <div class="day">
+                <strong>Day 09:</strong> Range Function
+            </div>
+
+            <div class="day">
+                <strong>Day 10:</strong> Even & Odd Numbers
+            </div>
+
+            <div class="day">
+                <strong>Day 11:</strong> Practice Questions
+            </div>
+
+            <div class="day">
+                <strong>Day 12:</strong> Final Revision & Test
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BASIC PYTHON NOTES -->
+    <section id="notes">
+
+        <div class="section-title">
+
+            <h2>Basic Python Notes 📚</h2>
+
+            <p>
+                Download the complete Python Basic Notes PDF.
+            </p>
+
+        </div>
+
+
+        <div class="notes-container">
+
+            <div class="notes-box">
+
+                <div class="notes-icon">
+                    📘
+                </div>
+
+                <h3>
+                    Python Basic Notes
+                </h3>
+
+                <p>
+                    Complete Python test preparation notes including
+                    print(), variables, operators, input(), percentage,
+                    average, conditions, marksheet, for loops, range(),
+                    even/odd numbers, revision, practice questions and MCQs.
+                </p>
+
+                <a
+                    href="pdfs/Python-Basic-Notes.pdf"
+                    download="Python Basic Notes.pdf"
+                    class="download-btn"
+                >
+                    ⬇️ Download PDF
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REGISTER -->
+    <section id="register">
+
+        <div class="section-title">
+
+            <h2>Register for Python Course 📝</h2>
+
+            <p>
+                Join Python With Azhar and start learning.
+            </p>
+
+        </div>
+
+
+        <div class="register-box">
+
+            <form id="registrationForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <select id="level" required>
+
+                    <option value="">
+                        Select your level
+                    </option>
+
+                    <option>
+                        Beginner
+                    </option>
+
+                    <option>
+                        Intermediate
+                    </option>
+
+                    <option>
+                        Advanced
+                    </option>
+
+                </select>
+
+                <button type="submit">
+                    Register Now 🚀
+                </button>
+
+            </form>
+
+
+            <div id="message"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <strong>Python With Azhar</strong>
+        </p>
+
+        <p>
+            Created by Azhar Channa 🐍
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value;
+
+            document.getElementById("message").innerHTML =
+                "🎉 Thank you " + name +
+                "! Your registration has been submitted successfully.";
+
+            document
+                .getElementById("registrationForm")
+                .reset();
+
+        });
+
+    </script>
+
+</body>
+</html>
